@@ -15,18 +15,18 @@ app.post('/addproduct', (req, res) => {
     res.send('product added')
 
 })
-app.get('/loaddata',async(req,res)=>{
+app.get('/loadproducts',async(req,res)=>{
     const users= await empc.find();
     res.send(users)
 })
-app.get('/loaddata/:id',async(req,res)=>{
+app.get('/loadproducts/:id',async(req,res)=>{
     const uid=parseInt(req.params.id)
     const users= await empc.findById(uid);
     res.send(users)
 })
 const startServer = async () => {
     await mongoose.connect(URL)
-    app.listen(4000, () => {
+    app.listen("https://backend-final-snds.onrender.com", () => {
         console.log('server is ready...!');
     })
 }
