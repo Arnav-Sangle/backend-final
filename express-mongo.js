@@ -26,7 +26,7 @@ app.get('/loadproducts/:id',async(req,res)=>{
 })
 const startServer = async () => {
     await mongoose.connect(URL)
-    app.listen("https://frontend-final-39qr.onrender.com", () => {
+    app.listen(4000, () => {
         console.log('server is ready...!');
     })
 }
